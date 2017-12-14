@@ -3,24 +3,26 @@ package Exceptions;
 /**
  * Indicate invalid parameters provided by user
  */
-public class InvalidParamsException extends Exception {
-    public InvalidParamsException() {
-        super();
-    }
+public class InvalidParamsException extends FeatureException {
 
-    public InvalidParamsException(String message) {
-        super(message);
-    }
+  public InvalidParamsException() {
+    super();
+  }
 
-    public InvalidParamsException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public InvalidParamsException(String message) {
+    super(message);
+  }
 
-    public InvalidParamsException(Throwable cause) {
-        super(cause);
-    }
+  public InvalidParamsException(String message, Throwable cause) {
+    super(message, cause);
+  }
 
-    protected InvalidParamsException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
+  public InvalidParamsException(Throwable cause) {
+    super(cause);
+  }
+
+  protected InvalidParamsException(String message, Throwable cause, boolean enableSuppression,
+      boolean writableStackTrace) {
+    super(message, cause, enableSuppression, writableStackTrace);
+  }
 }
