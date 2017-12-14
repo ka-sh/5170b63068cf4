@@ -1,7 +1,8 @@
-package options;
+package features;
 
 import Exceptions.FeatureException;
 import Exceptions.InvalidParamsException;
+import domain.Canvas;
 import java.util.Arrays;
 
 /**
@@ -36,13 +37,15 @@ public class CreateCanvas implements Feature {
   }
 
   @Override
-  public String[][] execute(String[][] canvas, String[] params) throws FeatureException {
+  public Canvas execute(Canvas canvas, String[] params) throws FeatureException {
     validate(params);
     int w = Integer.parseInt(params[0]) + 1;
     int h = Integer.parseInt(params[1]) + 1;
-    canvas = getEmptyCanv(w, h);
-    drawCanvasFrame(canvas, w, h);
-    return canvas;
+    Canvas tmpCanv = new Canvas(h, w);
+    String[][] tmpWindow = getEmptyCanv(w, h);
+    drawCanvasWindow(tmpWindow, w, h);
+    tmpCanv.setWindow(tmpWindow);
+    return tmpCanv;
   }
 
   private String[][] getEmptyCanv(int x, int y) {
@@ -53,7 +56,7 @@ public class CreateCanvas implements Feature {
     return tmpCan;
   }
 
-  private void drawCanvasFrame(String[][] canvas, int w, int h) {
+  private void drawCanvasWindow(String[][] canvas, int w, int h) {
     for (int i = 0; i < w; i++) {
       canvas[0][i] = "-";
       canvas[h - 1][i] = "-";

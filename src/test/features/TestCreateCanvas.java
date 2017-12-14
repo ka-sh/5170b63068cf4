@@ -1,18 +1,19 @@
-package options;
+package features;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
 import Exceptions.FeatureException;
+import domain.Canvas;
 import org.junit.Test;
 
 public class TestCreateCanvas {
 
   @Test
   public void testCreateCanvas_Rosy() throws Exception {
-    String[][] can = new CreateCanvas().execute(null, new String[]{"3", "3"});
-    displayCavas(can);
-    assertNotNull(can);
+    Canvas canvas = new CreateCanvas().execute(null, new String[]{"3", "3"});
+    displayCavas(canvas.getWindow());
+    assertNotNull(canvas.getWindow());
   }
 
   @Test(expected = FeatureException.class)

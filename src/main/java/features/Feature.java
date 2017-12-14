@@ -1,6 +1,7 @@
-package options;
+package features;
 
 import Exceptions.FeatureException;
+import domain.Canvas;
 
 /**
  * Created  on 12/10/17.
@@ -32,5 +33,5 @@ public interface Feature {
    * @param params Array of parameters used
    * @throws if execute faced an issue during execution
    */
-  String[][] execute(String[][] canvas, String[] params) throws FeatureException;
+  Canvas execute(Canvas canvas, String[] params) throws FeatureException;
 }
