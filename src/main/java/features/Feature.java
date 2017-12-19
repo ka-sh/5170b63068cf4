@@ -9,7 +9,7 @@ import domain.Canvas;
 public interface Feature {
 
   /**
-   * @return String explaining draw feature, and option used to activate it.
+   * @return String explaining render feature, and option used to activate it.
    */
   String About();
 
